@@ -24,7 +24,8 @@
         "paths": {
             "@/*": ["./src/*"]
         },
-        "types": ["react/next"]
+        "types": ["react/next"],
+        "strictNullChecks": false
     },
     "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
     "exclude": ["node_modules"]

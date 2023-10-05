@@ -1,9 +1,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Lexend } from 'next/font/google'
-import MaterialUiProvider from '../providers/material-ui-provider'
-
-const lexend = Lexend({ subsets: ['latin'] })
+import MainProvider from '../providers/main-provider'
+import { Box } from '@mui/material'
+import Column from '../components/layout/column'
+import Navbar from '../components/layout/navbar'
+import Footer from '../components/layout/footer'
 
 export const metadata: Metadata = {
     title: 'Seminário - Ala Jd. Amanda I',
@@ -14,8 +15,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={lexend.className}>
-                <MaterialUiProvider options={{ key: 'mui' }}>{children}</MaterialUiProvider>
+            <body>
+                <MainProvider>
+                    <Column
+                        component={'main'}
+                        height={'100%'}
+                        width={'100%'}
+                    >
+                        <Navbar />
+                        <Box flex={1}>{children}</Box>
+                        <Footer />
+                    </Column>
+                </MainProvider>
             </body>
         </html>
     )

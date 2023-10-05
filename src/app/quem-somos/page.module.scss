@@ -1,0 +1,45 @@
+@use '../../styles/colors.module.scss' as colors;
+
+.cover {
+    background-image: url('/cover-left.png'), url('/cover-seminario.png'), url('/cover-right.png');
+    background-repeat: no-repeat;
+    background-position:
+        left,
+        center center,
+        right;
+    height: 580px;
+    width: 100%;
+    background-color: colors.$turquoiseSurf;
+    border-bottom: 8px solid colors.$atomicTangerine;
+    background-size: 44%, 25%, 44%;
+}
+
+@media screen and (max-width: 1580px) {
+    .cover {
+        height: 465px;
+    }
+}
+
+@media screen and (max-width: 1320px) {
+    .cover {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 1190px) {
+    .cover {
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 1190px) {
+    .cover {
+        height: 330px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .cover {
+        background-size: 440px, 220px, 440px;
+    }
+}
