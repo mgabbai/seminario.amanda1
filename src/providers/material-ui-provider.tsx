@@ -1,18 +1,15 @@
 'use client'
 import { StyledEngineProvider, ThemeProvider, createTheme } from '@mui/material/styles'
 import { useState, type PropsWithChildren } from 'react'
-import { Lexend } from 'next/font/google'
 import { useServerInsertedHTML } from 'next/navigation'
 import createCache from '@emotion/cache'
 import { CacheProvider } from '@emotion/react'
 import CssBaseline from '@mui/material/CssBaseline'
-import colors from '../styles/colors.module.css'
-
-const lexend = Lexend({ subsets: ['latin'] })
+import colors from '../styles/colors.module.scss'
 
 const theme = createTheme({
     typography: {
-        fontFamily: lexend.style.fontFamily,
+        fontFamily: "'PT Sans', 'sans-serif'",
     },
     palette: {
         primary: {
@@ -28,6 +25,7 @@ export default function MaterialUiProvider(props: PropsWithChildren<{ options: a
     const [{ cache, flush }] = useState(() => {
         const cache = createCache(options)
         cache.compat = true
+        // eslint-disable-next-line @typescript-eslint/unbound-method
         const prevInsert = cache.insert
         let inserted: string[] = []
         cache.insert = (...args) => {

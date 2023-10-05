@@ -1,0 +1,12 @@
+@use '../../colors.module.scss' as colors;
+
+.footer {
+    background-color: colors.$turquoiseSurf;
+    border-top: 8px solid colors.$atomicTangerine;
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
+    color: colors.$cetaceanBlue;
+    font-size: 1rem;
+    padding: 16px;
+}

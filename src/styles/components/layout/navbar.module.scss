@@ -1,0 +1,20 @@
+@use '../../colors.module.scss' as colors;
+
+.navbar {
+    background-color: colors.$lightMossGreen;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    color: colors.$black;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    border-bottom: 10px solid colors.$atomicTangerine;
+    flex-wrap: wrap;
+    padding: 20px;
+
+    a:hover {
+        transition: 300ms;
+        color: colors.$burntOrange;
+    }
+}
